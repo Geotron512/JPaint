@@ -1,8 +1,11 @@
 import java.util.Random;
 
+/**
+ * @version 0.1
+ */
 public class Main {
     public static void main(String[] args){
-        Frame frame = new Frame();
+        new Frame();
     }
     public static void randPaint(Frame f, int loop, int delay){
         Random rng = new Random();
