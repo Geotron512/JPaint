@@ -1,10 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.Objects;
 
 public class Grid extends JPanel {
+    //Variables
     public JButton[][] cells;
-    private Frame frame;
+    private final Frame frame;
+    //Constructors
     public Grid(Frame f, int rows, int columns){
         super();
         setLayout(new GridLayout(rows, columns));

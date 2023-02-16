@@ -1,12 +1,13 @@
 import java.util.Random;
-
 /**
  * @version 0.1
  */
 public class Main {
+    //Runs the code
     public static void main(String[] args){
         new Frame();
     }
+    //Added random feature for fun
     public static void randPaint(Frame f, int loop, int delay){
         Random rng = new Random();
         int r, c;

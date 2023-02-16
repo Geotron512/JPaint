@@ -4,27 +4,30 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Frame extends JFrame implements ActionListener{
+    //Variables
     public JTextField color = new JTextField("0, 0, 0");
-    private JButton random = new JButton("Paint for me");
+    private final JButton random = new JButton("Paint for me");
     private Color c;
     Grid g;
-
+    //Action
     public void actionPerformed(ActionEvent e) {
         JButton b = (JButton) e.getSource();
         if(b.equals(random)) Main.randPaint(this, 1024, 1);
         else paintButton(b);
     }
+    //Paints button
     public void paintButton(JButton b){
         c = parseColor(color.getText());
         b.setBackground(c);
         b.update(b.getGraphics());
     }
+    //Constructor
     public Frame(){
         super();
-        try{UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());}catch(Exception exc){};
+        try{UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());}catch(Exception exc){System.out.println(exc.getMessage()+"\n"+exc.getCause());}
         setTitle("PAINT");
         setSize(640, 640);
-        setDefaultCloseOperation(3);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         add(color, BorderLayout.NORTH);
         g = new Grid(this, 64, 64);
@@ -33,6 +36,7 @@ public class Frame extends JFrame implements ActionListener{
         add(random, "South");
         setVisible(true);
     }
+    //Parse color from the text field
     public Color parseColor(String arg) {
         Color c = new Color(255, 255, 255);
         if(arg.contains(",")){
