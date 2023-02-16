@@ -1,6 +1,7 @@
 import java.util.Random;
 /**
- * @version 0.1
+ * @author Geotron512
+ * @version alpha 0.1
  */
 public class Main {
     //Runs the code
